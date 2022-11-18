@@ -1,13 +1,16 @@
-import RPi.GPIO as GPIO
+import time
 from mfrc522 import SimpleMFRC522
+
+from nfc_action import nfc_action
 
 
 def read_nfc():
     reader = SimpleMFRC522()
-    try:
-        print("Waiting for NFC read")
-        id = reader.read()[0]
-        print("The ID for this card is:", id)
+    print("Waiting for NFC read")
 
-    finally:
-        GPIO.cleanup()
+    while True:
+        id = reader.read_no_block()
+        if (id != None):
+            print("NFC read ID:", id)
+            nfc_action(id)
+            time.sleep(1)

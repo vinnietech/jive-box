@@ -1,9 +1,16 @@
 # JiveBox digital record player using NFC chips
 
 ## Installation
-Install Python3 and pipenv and run
-```shell
+Install Python3
 
+install dependancies:
+```shell
+pip install -r requirements.txt
+```
+
+run the program:
+```shell
+./main.py
 ```
 
 
