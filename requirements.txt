@@ -1,1 +1,3 @@
-soco~=0.28.1
+soco
+mfrc522
+RPi.GPIO
