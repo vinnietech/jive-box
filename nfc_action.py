@@ -9,7 +9,7 @@ from sonos import play_spotify_link
 def nfc_action(id):
     if id == 228186622311:
         print("Perform git pull action")
-        g = git.cmd.Git('./')
+        g = git.cmd.Git(os.path.dirname(os.path.abspath(__file__)))
         g.pull()
     else:
         result = map_rfid_to_spotify_url(id)
