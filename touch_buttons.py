@@ -32,7 +32,6 @@ def listen_to_touch_buttons():
                 print("Error playing previous song")
             time.sleep(TOUCH_SLEEP_TIME)
 
-    while True:
         if touch_detect(NEXT_TOUCH_PIN):
             print("Next touch detected")
             try:
@@ -41,7 +40,6 @@ def listen_to_touch_buttons():
                 print("Error playing next song")
             time.sleep(TOUCH_SLEEP_TIME)
 
-    while True:
         if touch_detect(PAUZE_PLAY_TOUCH_PIN):
             print("Play/pause touch detected")
             try:
