@@ -49,3 +49,5 @@ def listen_to_touch_buttons():
             except:
                 print("Error toggling play/pause")
             time.sleep(TOUCH_SLEEP_TIME)
+
+listen_to_touch_buttons()
