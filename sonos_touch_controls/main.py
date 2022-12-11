@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-from sonos_touch_controls.touch_buttons import listen_to_touch_buttons
+from touch_buttons import listen_to_touch_buttons
 
 
 def main():
