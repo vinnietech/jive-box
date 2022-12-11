@@ -1,6 +1,8 @@
 import os
 from rfid_map import map_rfid_to_spotify_url
 import git
+
+from slack_notification import send_missing_id_notification
 from sonos import play_spotify_link
 
 
@@ -15,3 +17,4 @@ def nfc_action(id):
             play_spotify_link(result, os.environ.get('SONOS_DEVICE_IP'))
         else:
             print("No Spotify link found for id: " + str(id))
+            send_missing_id_notification(id)

@@ -3,3 +3,4 @@ mfrc522
 RPi.GPIO
 GitPython
 PyYAML~=6.0
+slack_sdk
