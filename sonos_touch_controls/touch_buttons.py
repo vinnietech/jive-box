@@ -26,17 +26,26 @@ def listen_to_touch_buttons():
     while True:
         if touch_detect(PREVIOUS_TOUCH_PIN):
             print("Previous touch detected")
-            sonos.play_previous(os.environ.get('SONOS_DEVICE_IP'))
+            try:
+                sonos.play_previous(os.environ.get('SONOS_DEVICE_IP'))
+            except:
+                print("Error playing previous song")
             time.sleep(TOUCH_SLEEP_TIME)
 
     while True:
         if touch_detect(NEXT_TOUCH_PIN):
             print("Next touch detected")
-            sonos.play_next(os.environ.get('SONOS_DEVICE_IP'))
+            try:
+                sonos.play_next(os.environ.get('SONOS_DEVICE_IP'))
+            except:
+                print("Error playing next song")
             time.sleep(TOUCH_SLEEP_TIME)
 
     while True:
         if touch_detect(PAUZE_PLAY_TOUCH_PIN):
             print("Play/pause touch detected")
-            sonos.toggle_play_pause(os.environ.get('SONOS_DEVICE_IP'))
+            try:
+                sonos.toggle_play_pause(os.environ.get('SONOS_DEVICE_IP'))
+            except:
+                print("Error toggling play/pause")
             time.sleep(TOUCH_SLEEP_TIME)
