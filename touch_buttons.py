@@ -48,4 +48,7 @@ def listen_to_touch_buttons():
                 print("Error toggling play/pause")
             time.sleep(TOUCH_SLEEP_TIME)
 
+        # add a small sleep to prevent using 100% of the CPU
+        time.sleep(0.01)
+
 listen_to_touch_buttons()

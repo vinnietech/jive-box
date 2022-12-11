@@ -10,7 +10,11 @@ def read_nfc():
 
     while True:
         id, text = reader.read_no_block()
+
         if id is not None:
             print("NFC read ID:", id)
             nfc_action(id)
             time.sleep(1)
+
+        # add a small sleep to prevent using 100% of the CPU
+        time.sleep(0.01)
