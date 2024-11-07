@@ -7,7 +7,7 @@ from sonos import play_spotify_link
 
 
 def nfc_action(id):
-    if id == 228186622311:
+    if id == os.environ.get('GIT_PULL_NFC_ID'):
         print("Perform git pull action")
         g = git.cmd.Git(os.path.dirname(os.path.abspath(__file__)))
         g.pull()

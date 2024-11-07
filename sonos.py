@@ -2,7 +2,7 @@ from soco import SoCo
 from soco.plugins.sharelink import ShareLinkPlugin
 from soco import discover
 
-# we asume the there is a song playing and toggle with play is true initially
+# we assume the there is a song playing and toggle with play is true initially
 playing = True
 
 def play_spotify_link(share_link, device_ip):
