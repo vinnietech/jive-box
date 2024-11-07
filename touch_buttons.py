@@ -18,6 +18,9 @@ def touch_detect(pin):
 
 
 def listen_to_touch_buttons():
+    if not os.getenv("SONOS_DEVICE_IP"):
+        raise ValueError("Environment variable SONOS_DEVICE_IP is not set.")
+
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(PREVIOUS_TOUCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(PAUZE_PLAY_TOUCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)

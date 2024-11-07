@@ -7,6 +7,12 @@ from sonos import play_spotify_link
 
 
 def nfc_action(id):
+    if not os.getenv("SONOS_DEVICE_IP"):
+        raise ValueError("Environment variable SONOS_DEVICE_IP is not set.")
+    if not os.getenv("GIT_PULL_NFC_ID"):
+        raise ValueError("Environment variable GIT_PULL_NFC_ID is not set.")
+
+
     if id == os.environ.get('GIT_PULL_NFC_ID'):
         print("Perform git pull action")
         g = git.cmd.Git(os.path.dirname(os.path.abspath(__file__)))
